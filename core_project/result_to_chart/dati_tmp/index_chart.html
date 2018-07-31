@@ -1,0 +1,181 @@
+    <!DOCTYPE html>
+    <html>
+        
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            
+            <title>Tool per analisi riferimenti bibliografici</title>
+            
+            <style>
+                body{
+                    margin: 20px;
+                }
+                #chart{
+                    width:70%;
+                    margin-left: 20px;
+                    margin-top: 20px;
+                    display:inline-block;
+                }
+                #presenza_sezioni{
+                    width:25%;
+                    margin-top:20px;
+                    margin-right: 20px;
+                    float:right;
+                    display:inline-block;
+                    border: 2px;
+                    border-collapse: collapse;
+                    overflow-y:hidden;
+                }
+                
+                td, th {
+                    border: 1px solid #dddddd;
+                    text-align: left;
+                    padding: 8px;
+                }
+                
+                #titolo, #resultInfo{
+                    text-align: center;
+                    display: block;
+                }
+                
+                #grado_acc{
+                    margin: 20px;
+                }
+                
+                #copy{
+                    display: none;
+                    position: fixed;
+                    bottom: 5px;
+                    right: 10px;
+                }
+            </style>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        </head><body>
+                <h3 id="titolo">Analisi Titled Sections - Web Semantics: Science, Services and Agents on the World Wide Web</h3>
+                <span id="resultInfo">290 articoli analizzati su 290 articoli totali</span><div id="chart">
+                <canvas id="myChart"></canvas>
+            </div><div id="presenza_sezioni">
+                 <table>
+                    <tr>
+                      <th>Sezione</th>
+                      <th>Num. articoli</th>
+                    </tr><tr><td>Abstract</td><td>290</td></tr><tr><td>Introduction</td><td>273</td></tr><tr><td>Related_work</td><td>159</td></tr><tr><td>Discussion</td><td>135</td></tr></table></div><!-- copyright -->
+            <footer class="main-footer" id="copy">
+                Tool realizzato da <strong>Federico Giubaldo</strong> come progetto di tesi col professore <strong>Angelo Di Iorio</strong>.
+            </footer>
+            
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+            <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.min.js"></script>
+        
+    
+            <script>
+                $(document).ready(crea_grafico);
+                
+                myChart = null;
+                
+                function crea_grafico(){
+                
+                    /*  Rimuovo il vecchio grafico per creare il nuovo  */    
+                    if(myChart!==null){
+                        myChart.destroy();
+                    }
+                    
+                    var array_x = [];
+                    var array_y = [];array_x.push("Other");array_y.push(34.13);array_x.push("Related_work");array_y.push(23.01);array_x.push("Introduction");array_y.push(11.23);array_x.push("Discussion");array_y.push(3.99);array_x.push("Abstract");array_y.push(0.01);var ctx = $("#myChart");
+                     myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: array_x,
+                                datasets: [
+                                    {
+                                        label: 'Num. Riferimenti',data: array_y,
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.4)',
+                                            'rgba(54, 162, 235, 0.4)',
+                                            'rgba(255, 206, 86, 0.4)',
+                                            'rgba(75, 222, 142, 0.4)',
+                                            'rgba(153, 102, 255, 0.4)',
+                                            'rgba(200, 159, 44, 0.4)',
+                                            'rgba(54,100,180,0.4)',
+                                            'rgba(100, 10, 255, 0.4)',
+                                            'rgba(89, 206, 250, 0.4)',
+                                            'rgba(250, 150, 50, 0.4)',
+                                            'rgba(255, 99, 132, 0.4)',
+                                            'rgba(54, 162, 235, 0.4)',
+                                            'rgba(255, 206, 86, 0.4)',
+                                            'rgba(75, 222, 142, 0.4)',
+                                            'rgba(153, 102, 255, 0.4)',
+                                            'rgba(200, 159, 44, 0.4)',
+                                            'rgba(54,100,180,0.4)',
+                                            'rgba(100, 10, 255, 0.4)',
+                                            'rgba(89, 206, 250, 0.4)',
+                                            'rgba(250, 150, 50, 0.4)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255,99,132,1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 222, 142, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(200, 159, 44, 1)',
+                                            'rgba(54,100,180,1)',
+                                            'rgba(100, 10, 255, 1)',
+                                            'rgba(89, 206, 250, 1)',
+                                            'rgba(250, 150, 50, 1)',
+                                            'rgba(255,99,132,1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 222, 142, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(200, 159, 44, 1)',
+                                            'rgba(54,100,180,1)',
+                                            'rgba(100, 10, 255, 1)',
+                                            'rgba(89, 206, 250, 1)',
+                                            'rgba(250, 150, 50, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    title: {
+                                        display: true,
+                                        text: 'Distribuzione medie ponderate dei riferimenti su sezioni scelte',
+                                        fontSize:18,
+                                        fontStyle:""
+                                    },
+                                    tooltips: {
+                                        enabled: true
+                                    },
+                                    legend: {
+                                        display: false
+                                    },
+                                    scales: {
+                                        yAxes: [{
+                                            scaleLabel: {
+                                                display: true,    
+                                                labelString: 'Num. Riferimenti',
+                                                fontSize: 16
+                                            },
+                                            ticks: {
+                                                beginAtZero:true
+                                            }
+                                        }],
+                                        xAxes: [{
+                                            scaleLabel: {
+                                                display: true,
+                                                labelString: 'Sezioni analizzate',
+                                                fontSize: 16
+                                            },
+                                        }]
+                                    }
+                                }
+                            });
+                }
+                </script>
+            
+        </body>
+    </html>

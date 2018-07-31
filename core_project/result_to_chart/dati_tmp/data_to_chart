@@ -1,0 +1,48 @@
+{
+    "analisi": "Titled_Sections",
+    "data_1": {
+        "result_type": "densita_riferimenti",
+        "values": {
+            "Other": "34.13",
+            "Related_work": "23.01",
+            "Introduction": "11.23",
+            "Discussion": "3.99",
+            "Abstract": "0.01"
+        }
+    },
+    "data_2": {
+        "result_type": "totale_riferimenti",
+        "values": {
+            "Other": 9898,
+            "Related_work": 3659,
+            "Introduction": 3066,
+            "Discussion": 539,
+            "Abstract": 3
+        }
+    },
+    "data_3": {
+        "result_type": "percentuale_riferimenti",
+        "values": {
+            "Other": "57.66",
+            "Related_work": "21.32",
+            "Introduction": "17.86",
+            "Discussion": "3.14",
+            "Abstract": "0.02"
+        }
+    },
+    "data_4": {
+        "result_type": "presenza_sezioni_rilevani_in_articoli",
+        "values": {
+            "Abstract": 290,
+            "Introduction": 273,
+            "Related_work": 159,
+            "Discussion": 135
+        }
+    },
+    "riferimenti_totali": 17165,
+    "media_riferimenti_per_articolo": 59,
+    "nome_pubblicazione": "Web_Semantics:_Science,_Services_and_Agents_on_the_World_Wide_Web",
+    "articoli_totali_convertiti": 290,
+    "articoli_analizzati": 290,
+    "execution_time": "1.76"
+}
